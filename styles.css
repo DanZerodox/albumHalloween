@@ -1,0 +1,289 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Evita el desplazamiento */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background-color: white; /* Fondo naranja */
+    color: black; /* Color del texto */
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    position: relative;
+    background: url('media/halloween-background.png') no-repeat center center fixed; /* Fondo decorativo opcional */
+    background-size: cover; /* Asegúrate de que el fondo cubra toda el área */
+    padding: 20px; /* Agrega algo de espacio alrededor */
+}
+
+/* Modificar la clase de las páginas */
+.page {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente para las páginas */
+    border-radius: 10px; /* Bordes redondeados para las páginas */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Sombra para destacar las páginas */
+}
+
+.container {
+    width: 90%; /* Ajusta el ancho del contenedor */
+    height: 90%; /* Ajusta la altura del contenedor */
+    position: relative;
+}
+
+.album {
+    width: 100%;
+    height: 100%;
+}
+
+.page {
+    background-color: white;
+    position: relative;
+    width: 50%; /* Cada página ocupa la mitad del ancho */
+    height: 100%;
+    overflow: hidden; /* Evita que las imágenes se salgan */
+    display: inline-block; /* Muestra las páginas en línea */
+}
+
+/* Estilo para las imágenes */
+img {
+    width: 100%;
+    height: 92%; /* Ajusta la altura al 92% de la página */
+    object-fit: cover; /* Asegura que la imagen se escale y recorte adecuadamente */
+    display: block; /* Evita el espacio en la parte inferior */
+}
+
+/* Decoraciones */
+.decoracion {
+    position: absolute;
+    z-index: 1; /* Asegura que las decoraciones estén encima de las imágenes */
+}
+
+.calabaza {
+    background-image: url('media/calabaza.png');
+    background-size: contain; /* Ajusta el tamaño de la calabaza */
+    background-repeat: no-repeat;
+    width: 80px; /* Ancho de la calabaza */
+    height: 80px; /* Alto de la calabaza */
+    bottom: 0px; /* Bajada de la calabaza */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Ajusta el centrado */
+}
+
+.arania {
+    background-image: url('media/arania.png');
+    background-size: contain; /* Ajusta el tamaño de la araña */
+    background-repeat: no-repeat;
+    width: 80px; /* Ancho de la araña */
+    height: 80px; /* Alto de la araña */
+    bottom: 0px; /* Bajada de la araña */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Ajusta el centrado */
+}
+
+.calavera {
+    background-image: url('media/calavera.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50px; /* Ajusta el tamaño según sea necesario */
+    height: 50px; /* Mantiene la proporción de la imagen */
+}
+
+/* Posiciones de las decoraciones */
+.page .calavera.top-left {
+    top: 10px;
+    left: 10px; /* Esquina superior izquierda */
+}
+
+.page .calavera.top-right {
+    top: 10px;
+    right: 10px; /* Esquina superior derecha */
+}
+
+/* Estilo para el texto */
+.texto {
+    position: absolute;
+    bottom: 65px; /* Baja el texto */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Ajusta el centrado */
+    color: white; /* Color del texto */
+    font-size: 24px; /* Tamaño de la fuente */
+    text-align: center; /* Centra el texto */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para legibilidad */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    width: 80%; /* Ancho del texto */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8); /* Sombra para destacar el texto */
+}
+
+.titulo {
+    text-align: center;
+    margin: 20px 0; /* Espacio alrededor */
+    color: #fff; /* Color del texto */
+}
+
+.titulo h1 {
+    font-size: 48px; /* Tamaño grande para el título */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para efecto 3D */
+}
+
+.titulo p {
+    font-size: 24px; /* Tamaño para la descripción */
+    margin-top: 10px;
+    color: #ffcc00; /* Color diferente para el subtítulo */
+}
+
+.texto-inicial {
+    position: absolute;
+    top: 20%; /* Ajusta según sea necesario */
+    left: 0%; /* Ajusta según sea necesario */
+    width: 40%; /* Ancho para el texto */
+    background: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra */
+    z-index: 10; /* Asegúrate de que esté por encima */
+    display: block; /* Mostrar por defecto */
+}
+
+
+.calavera-kawaii {
+    position: relative;
+    width: 100px; /* Ancho de la calavera */
+    height: 100px; /* Alto de la calavera */
+    background-color: #fff; /* Color de fondo blanco */
+    border-radius: 50%; /* Hacemos que sea redondeada */
+    border: 5px solid #000; /* Contorno negro */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra */
+}
+
+.calavera-kawaii::before,
+.calavera-kawaii::after {
+    content: '';
+    position: absolute;
+    background-color: #000; /* Color de las características */
+    border-radius: 50%;
+}
+
+.calavera-kawaii::before { /* Ojos */
+    width: 20px;
+    height: 20px;
+    top: 30%;
+    left: 20%;
+}
+
+.calavera-kawaii::after { /* Ojos */
+    width: 20px;
+    height: 20px;
+    top: 30%;
+    right: 20%;
+}
+
+.boca {
+    position: absolute;
+    background-color: #000; /* Color de la boca */
+    width: 40px; /* Ancho de la boca */
+    height: 20px; /* Alto de la boca */
+    border-radius: 10px; /* Bordes redondeados */
+    top: 50%; /* Ubicación vertical */
+    left: 50%; /* Centramos horizontalmente */
+    transform: translate(-50%, -50%) rotate(0deg); /* Centramos con transformaciones */
+}
+
+
+/* Mensaje para orientación vertical */
+@media only screen and (orientation: portrait) {
+    body::before {
+        content: "Por favor, gire su dispositivo para ver el álbum en modo horizontal.";
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        z-index: 1000; /* Asegúrate de que esté encima de otros elementos */
+        font-size: 20px;
+        color: #333;
+        display: block; /* Muestra el mensaje en modo vertical */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra para destacar */
+    }
+}
+
+
+.skull {
+    position: relative;
+    width: 200px;
+    height: 250px;
+    background-color: white;
+    border-radius: 50% 50% 30% 30%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.eyes {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.eye {
+    width: 30px;
+    height: 30px;
+    position: relative;
+}
+
+.heart {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.mouth {
+    position: absolute;
+    bottom: 25%;
+    left: 50%;
+    width: 60px;
+    height: 30px;
+    border-radius: 0 0 30px 30px;
+    background-color: black;
+    transform: translateX(-50%) rotate(0deg);
+}
+
+/* Mejora del aspecto general */
+.skull::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    width: 70%;
+    height: 50%;
+    background-color: white;
+    border-radius: 50%;
+    transform: translateX(-50%) rotate(15deg);
+}
+
+.skull::after {
+    content: '';
+    position: absolute;
+    bottom: -10%;
+    left: 50%;
+    width: 70%;
+    height: 70%;
+    background-color: white;
+    border-radius: 50%;
+    transform: translateX(-50%) rotate(-15deg);
+}
